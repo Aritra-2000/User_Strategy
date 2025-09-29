@@ -3,6 +3,7 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import strategyRoutes from "./routes/strategies";
+import syncRoutes from "./routes/sync";
 
 const app: Express = express();
 const PORT: number = parseInt(process.env.PORT || "3000", 10);
@@ -25,6 +26,7 @@ app.use(bodyParser.json());
 
 // Routes
 app.use("/api/strategies", strategyRoutes);
+app.use("/api/sync", syncRoutes);
 
 app.get("/api/health", (req: Request, res: Response) => {
   res.status(200).json({
