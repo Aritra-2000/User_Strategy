@@ -8,7 +8,7 @@
     "start": "node dist/server.js",
     "dev": "ts-node src/server.ts",
     "dev:watch": "nodemon --exec ts-node src/server.ts",
-    "clean": "rm -rf dist",
+    "clean": "rimraf dist",
     "prebuild": "npm run clean",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,17 +22,19 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/body-parser": "^1.19.6",
-    "@types/cors": "^2.8.19",
+    "axios": "^1.6.0",
     "body-parser": "^2.2.0",
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "mongoose": "^8.18.0"
   },
   "devDependencies": {
+    "@types/body-parser": "^1.19.6",
+    "@types/cors": "^2.8.19",
     "@types/express": "^5.0.3",
     "@types/node": "^24.3.0",
     "nodemon": "^3.0.1",
+    "rimraf": "^5.0.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.2"
   }
